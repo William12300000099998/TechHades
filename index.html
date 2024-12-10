@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TechHades</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+      <link rel="stylesheet" href="css/login.css">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/navbar.css">
+      <link rel="stylesheet" href="javascript/script.js">
+             
+
+</head>
+<body>
+        
+    
+  
+    <nav class="navbar navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.png" alt="" width="30" height="30" class="mb-3">
+       <span id="tech">Tech</span><span id="hades">Hades</span>
+          </a>
+    
+          <button id="share" onclick="share()">Share</button>
+    </nav>
+  
+          
+          <form id="form">
+          <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="userl" type="text" class="form-control">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input type="password" class="form-control" id="passwordl">
+                        </div>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                        </div>
+                        <div class="group">
+                            <button type="button" onclick="show()" id="gyatt">Sign in</button>
+                        </div>
+                        <div class="hr"></div>
+                        <p id="demo"></p>
+                        <div class="foot-lnk">
+                          <label for="tab-2" id="lnklab">Don't Have An Account?</a>
+                        </div>
+                    </div>  
+                </form>
+                <form>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="form-control">
+                        </div>
+                        <div class="group">
+                          <label for="email"  class="label">Email Address</label>
+                            <input id="emails" type="email" class="form-control">
+                        </div>
+                        <div class="group">
+                            <label for="inputPassword" class="label">Password</label>
+                            <input type="password" class="form-control" id="passs">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Confirm Password</label>
+                            <input type="password" class="form-control" id="passconfirm">
+                        </div>
+                        <div class="group">
+                            <button type="button" onclick="create()" id="gyatt">Sign Up</button>
+                        </div>
+
+
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1" id="lnklab">Already Member?</a>
+                        </div>
+                    </div>
+           
+  </form>
+
+
+
+  <script>
+ 
+        function show() {
+            var text = document.getElementById("userl").value;
+            var password = document.getElementById("passwordl").value;
+ 
+            var home = "aboutus.html";
+ 
+            if (text == "Edu" && password == "Education") {
+           
+                alert("Login Sucessful");
+                window.location.href = 'home.html';
+            }
+            else if (text == "Advisor" && password == "Advisory") {
+                alert("Login Sucessful");
+                window.location.href = 'home.html';
+            }
+            else if (text == "Hub" && password == "Hubbi") {
+                alert("Login Sucessful");
+                window.location.href = 'home.html';
+            }
+            else {
+               alert("Login fail");
+            }
+
+
+            document.getElementById("form").reset();
+        }
+
+
+        function create(){
+            var users = document.getElementById("user").value;
+            var passwords = document.getElementById("passs").value;
+            var email = document.getElementById("emails").value;
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var emailc = (regex.test(email));
+            var passc = document.getElementById("passconfirm").value;
+            
+
+            if (emailc == true && passc === passwords){
+                alert("Account Created");
+            }
+
+            
+            else if (emailc == false && passc === passwords){
+                alert("Email Format is not correct");
+            }
+
+            else if (emailc == true && passc != passwords){
+                alert("The passwords are not the same");
+            }
+
+            else{
+                alert("Email Format is not correct and The passwords are not the same");
+            }
+
+        }
+
+
+        //User - (Edu) Password - (Education)
+        //User - (Advisor) Password - (Advisory)
+        //User - (Hub) Password - (Hubbi)
+
+        function share() {
+ 
+        const text = "www.w3schools.com";
+
+
+        navigator.clipboard.writeText(text);
+
+
+        alert("Copied the text: " + text);
+}
+    </script>  
+
+
+</body>
+
+
+</html>
