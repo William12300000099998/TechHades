@@ -1,0 +1,121 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #280b43;
+  
+  }
+
+.ooo .heading{
+    color: #a717d1;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+ 
+.ooo .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+
+.ooo .container .main-video{
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.ooo .container .main-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.ooo .container .main-video .title{
+    color: #333;
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.ooo .container .video-list{
+    background: #fff;
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+
+}
+
+.ooo .container .video-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.ooo .container .video-list::-webkit-scrollbar-track{
+    background: #ccc;
+    border-radius: 50px;
+}
+
+.ooo .container .video-list::-webkit-scrollbar-thumb{
+    background: #666;
+    border-radius: 50px;
+}
+
+.ooo .container .video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.ooo .container .video-list .vid{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.ooo .container .video-list .vid:hover{
+    background: #eee;
+}
+
+.ooo .container .video-list .vid.active{
+    background: purple;
+}
+
+.ooo .container .video-list .vid.active .title{
+    color: white;  
+}
+
+.ooo .container .video-list .vid .title{
+    color: #333;
+    font-size: 17px;  
+}
+
+@media (max-width:991px){
+    .ooo .container{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 10px;
+    }
+
+
+}
+
+@media (max-width:768px){
+    .ooo .container{
+        grid-template-columns: 1fr;
+    }
+
+    
+}
